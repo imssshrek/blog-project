@@ -1,0 +1,8 @@
+.article-nav-popular-container h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* line-height: 30px; */
+  color: #444444;
+  margin-bottom: 10px;
+}

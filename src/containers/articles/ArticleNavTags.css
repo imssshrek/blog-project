@@ -1,0 +1,25 @@
+.article-nav-tags-container {
+  margin-bottom: 40px;
+}
+
+.article-nav-tags-container h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* line-height: 30px; */
+  color: #444444;
+  margin-bottom: 10px;
+}
+
+.article-nav-tags-container span {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #444444;
+  padding: 4px 15px;
+  background: #eeeeee;
+  border-radius: 16px;
+  margin-top: 10px;
+  margin-right: 10px;
+}

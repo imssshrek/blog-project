@@ -1,0 +1,37 @@
+.article-nav-category-container {
+  margin-bottom: 40px;
+}
+
+.article-nav-category-container h1 {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 20px;
+  /* line-height: 30px; */
+  color: #444444;
+}
+
+.article-nav-category-container .article-nav-category-list .list-large {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #444444;
+  list-style: none;
+}
+
+.article-nav-category-container .article-nav-category-list .list-large svg {
+  margin-right: 10px;
+}
+.article-nav-category-container .article-nav-category-list .list-large li {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.article-nav-category-container .article-nav-category-list .list-small {
+  margin-left: 45px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #444444;
+  list-style: none;
+}
