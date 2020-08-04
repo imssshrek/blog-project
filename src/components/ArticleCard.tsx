@@ -3,25 +3,19 @@ import "./ArticleCard.css";
 
 interface IProps {
   title: string;
-  content: string;
+  content: string | boolean;
+  hashtags: string[];
 }
 
-const ArticleCard = () => {
+const ArticleCard = (props: IProps) => {
   return (
     <div className="article-card-container">
       <div className="text-block">
-        <h1>제목</h1>
-        <p>
-          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-          sint. Velit officia consequat duis enim velit mollit. Exercitation
-          veniam consequat sunt nostrud amet. Amet minim mollit non deserunt
-          ullamco est sit aliqua dolor do amet sint. Velit officia consequat
-          duis enim velit mollit. Exercitation veniam consequat sunt nostrud
-          amet. Velit officia consequat duis enim velit mollit. Exercitation ...
-        </p>
-        <h3>#태그</h3>
-        <h3>#뿅뿅</h3>
-        <h3>#히히</h3>
+        <h1>{props.title}</h1>
+        <p>{props.content} ...</p>
+        {props.hashtags.map((hashtag, i) => (
+          <h3 key={i}>{hashtag}</h3>
+        ))}
       </div>
       <div className="thumbnail-block"></div>
     </div>

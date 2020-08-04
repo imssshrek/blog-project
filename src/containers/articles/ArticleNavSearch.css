@@ -3,7 +3,7 @@
 }
 
 .article-nav-search {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
@@ -19,10 +19,10 @@
   background: none;
   border: none;
   font-size: 18px;
-  width: 100px;
+  width: 187px;
 }
 
-.article-nav-search::placeholder {
+.article-nav-search input::placeholder {
   color: #888888;
 }
 

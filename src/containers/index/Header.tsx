@@ -9,7 +9,7 @@ const Header = () => {
       <header>
         <HeaderSVG width="500px" />
         <span className="header-title">
-          <span className="header-title-small">게을러서 만들어버린</span>
+          <span className="header-title-small">되는대로 만들어보는</span>
           <br />
           개발새발<span className="header-title-light">블로그</span>
         </span>

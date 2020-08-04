@@ -22,3 +22,15 @@
 .App-body hr {
   border: 12px solid rgba(255, 255, 255, 0);
 }
+
+@media screen and (max-width: 1200px) {
+  .App-body {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .App-body {
+    padding: 0px 20px 0px 20px;
+  }
+}

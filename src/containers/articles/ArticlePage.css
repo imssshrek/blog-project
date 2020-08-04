@@ -9,11 +9,44 @@
   display: flex;
   flex-direction: column;
   width: 240px;
-  height: 10vh;
   margin-right: 40px;
 }
 
 .article-page-container .article-page-main {
   /* display: inline-block; */
   width: 840px;
+}
+
+.article-page-container .article-page-main .section-title-container a {
+  margin-top: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .article-page-container {
+    flex-direction: column;
+    padding-top: 100px;
+  }
+  .article-page-container .article-page-main {
+    /* display: inline-block; */
+    width: 100%;
+  }
+  .article-page-container .article-page-side-nav {
+    display: none;
+  }
+
+  .article-nav-category-container {
+    display: none;
+  }
+
+  .article-nav-search-container {
+    display: none;
+  }
+
+  .article-nav-tags-container {
+    display: none;
+  }
+
+  .article-nav-popular-container {
+    display: none;
+  }
 }

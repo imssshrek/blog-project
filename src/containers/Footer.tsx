@@ -5,7 +5,9 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer-container">
-      <p>Copyright 2020. 개발새발 all rights reserved.</p>
+      <p>
+        Copyright 2020. <strong>개발새발</strong> all rights reserved.
+      </p>
     </div>
   );
 };

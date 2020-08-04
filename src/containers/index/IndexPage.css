@@ -1,0 +1,16 @@
+.index-page-container .article-section {
+  padding-top: 300px;
+}
+
+/* @media screen and (max-width: 1200px) {
+  .project-card-container {
+    width: 30%;
+    margin: 0;
+  }
+} */
+
+@media screen and (max-width: 768px) {
+  .index-page-container .article-section {
+    padding-top: 240px;
+  }
+}

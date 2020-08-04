@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
+import { Link, withRouter } from "react-router-dom";
 import {
   Code,
   Codepen,
@@ -21,14 +21,39 @@ const SearchBlock = () => {
   );
 };
 
-const Nav = () => {
+const Nav = (props: any) => {
+  const aaa = () => {
+    if (props.history.location.pathname === "/") {
+      document.querySelector(".nav")?.classList.add("nav-index");
+    } else {
+      document.querySelector(".nav")?.classList.remove("nav-index");
+    }
+  };
+
+  useEffect(() => {
+    aaa();
+    console.log("11");
+  });
+
   return (
     <nav className="nav">
       <div className="nav-container">
         <div className="nav-logo">
           <Link to={"/"}>
             <Code size={24} />
-            <h1>개발새발</h1>
+            <h1>
+              개발새발
+              <sup
+                style={{
+                  fontSize: 12,
+                  fontWeight: 400,
+                  color: "#aaaaaa",
+                  marginLeft: 2,
+                }}
+              >
+                beta
+              </sup>
+            </h1>
           </Link>
         </div>
         <div className="nav-link">
@@ -50,13 +75,11 @@ const Nav = () => {
           <Link to={"/"}>
             <GitHub className="nav-icon" size={24} />
           </Link>
-          <h1>
-            <SearchBlock />
-          </h1>
+          <SearchBlock />
         </div>
       </div>
     </nav>
   );
 };
 
-export default Nav;
+export default withRouter(Nav);
