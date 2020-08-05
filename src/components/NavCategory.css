@@ -1,0 +1,25 @@
+.article-nav-category-list .list-large {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  color: #444444;
+  list-style: none;
+}
+
+.article-nav-category-list .list-large svg {
+  margin-right: 10px;
+  transform: translateY(2px);
+}
+.article-nav-category-list .list-large li {
+  margin-top: 10px;
+  display: block;
+}
+
+.article-nav-category-list .list-small {
+  margin-left: 45px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  color: #444444;
+  list-style: none;
+}

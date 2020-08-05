@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import createCleanObjectFromArray from "../../modules/createCleanObjectFromArray";
-import { Plus, Minus } from "react-feather";
 
 import "./ArticleNavCategory.css";
+import NavCategory from "../../components/NavCategory";
 
 const ArticleNavCategory = () => {
   const [category, setCategory] = useState<any>({});
@@ -11,53 +11,18 @@ const ArticleNavCategory = () => {
   useEffect(() => {
     axios.get("/post/category").then(response => {
       const newCategory = createCleanObjectFromArray(response.data);
-      setCategory({ ...newCategory });
+      setCategory(newCategory);
     });
   }, []);
 
   const CategoryList = Object.keys(category).map(key => (
-    <ul className="list-large">
-      <li key={key}>
-        <Plus size={18} strokeWidth={1} />
-        {key}
-      </li>
-      {category[key] && (
-        <ul className="list-small">
-          {category[key].map((categorySmall: any) => (
-            <li>{categorySmall}</li>
-          ))}
-        </ul>
-      )}
-    </ul>
+    <NavCategory largeCategory={key} smallCategory={category[key]} />
   ));
 
   return (
     <div className="article-nav-category-container">
       <h1>카테고리</h1>
-      <div className="article-nav-category-list">
-        {CategoryList}
-        {/* <li>
-            <Plus size={18} strokeWidth={1} />
-            {categoryObject.categoryLarge}
-          </li>
-          <li style={{ fontWeight: 500 }}>
-            <Minus size={18} strokeWidth={2} />
-            {categoryObject.categoryLarge}
-          </li>
-          <ul className="list-small">
-            <li>{categoryObject.categorySmall}</li>
-            <li>{categoryObject.categorySmall}</li>
-            <li>{categoryObject.categorySmall}</li>
-          </ul>
-          <li>
-            <Plus size={18} strokeWidth={1} />
-            {categoryObject.categoryLarge}
-          </li>
-          <li>
-            <Plus size={18} strokeWidth={1} />
-            {categoryObject.categoryLarge}
-          </li> */}
-      </div>
+      <div className="article-nav-category-list">{CategoryList}</div>
     </div>
   );
 };

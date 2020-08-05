@@ -10,7 +10,7 @@
   color: #444444;
 }
 
-.article-nav-category-container .article-nav-category-list .list-large {
+/* .article-nav-category-container .article-nav-category-list .list-large {
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -20,11 +20,11 @@
 
 .article-nav-category-container .article-nav-category-list .list-large svg {
   margin-right: 10px;
+  transform: translateY(2px);
 }
 .article-nav-category-container .article-nav-category-list .list-large li {
   margin-top: 10px;
-  display: flex;
-  align-items: center;
+  display: block;
 }
 
 .article-nav-category-container .article-nav-category-list .list-small {
@@ -34,4 +34,4 @@
   font-size: 14px;
   color: #444444;
   list-style: none;
-}
+} */
