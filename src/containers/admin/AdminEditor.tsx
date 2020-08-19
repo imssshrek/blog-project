@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { useState, ChangeEvent, useEffect, useCallback } from "react";
 import ReactQuill from "react-quill";
 import styled from "styled-components";
 
@@ -6,6 +6,7 @@ import "react-quill/dist/quill.snow.css";
 
 import "./AdminEditor.css";
 import axios from "axios";
+import AutocompleteSearch from "../../components/AutocompleteSearch";
 
 const HashtagBlock = styled.span`
   font-size: 16px;
@@ -20,11 +21,15 @@ const AdminEditor = () => {
   const [content, setContent] = useState<string>("");
   const [hashtag, setHashtag] = useState<string>("");
   const [hashtagList, setHashtagList] = useState<string[]>([]);
+  const [categoryList, setCategoryList] = useState<string[]>([]);
   const [categoryId, setCategoryId] = useState<number>(1);
 
-  const handleContentChange = (value: string) => {
-    setContent(value);
-  };
+  const handleContentChange = useCallback(
+    (value: string) => {
+      setContent(value);
+    },
+    [content]
+  );
 
   const handleTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -62,6 +67,15 @@ const AdminEditor = () => {
         console.error(error);
       });
   };
+
+  useEffect(() => {
+    axios.get("/post/category").then(response => {
+      const newCategoryList = response.data.map((c: any) => c.category);
+      setCategoryList(newCategoryList);
+    });
+  }, []);
+
+  console.log(categoryList);
 
   return (
     <div className="admin-editor-container">
@@ -101,6 +115,7 @@ const AdminEditor = () => {
         <button onClick={handleHashtagSubmit}>추가</button>
       </div>
       <button onClick={handleSubmit}>등록</button>
+      <AutocompleteSearch url="/" keywordList={categoryList} />
     </div>
   );
 };
