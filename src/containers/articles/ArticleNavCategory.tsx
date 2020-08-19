@@ -1,23 +1,32 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import createCleanObjectFromArray from "../../modules/createCleanObjectFromArray";
+import arrayToCleanObject from "../../modules/arrayToCleanObject";
 
 import "./ArticleNavCategory.css";
 import NavCategory from "../../components/NavCategory";
 
 const ArticleNavCategory = () => {
-  const [category, setCategory] = useState<any>({});
+  const [category, setCategory] = useState<any>([]);
 
   useEffect(() => {
-    axios.get("/post/category").then(response => {
-      const newCategory = createCleanObjectFromArray(response.data);
-      setCategory(newCategory);
-    });
+    axios
+      .get("/post/category")
+      .then(response => {
+        setCategory(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
   }, []);
 
-  const CategoryList = Object.keys(category).map(key => (
-    <NavCategory largeCategory={key} smallCategory={category[key]} />
-  ));
+  const CategoryList = category.map((category: any) => {
+    return (
+      <NavCategory
+        largeCategory={category.category}
+        smallCategory={category.SubCategories}
+      />
+    );
+  });
 
   return (
     <div className="article-nav-category-container">

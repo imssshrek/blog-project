@@ -6,7 +6,6 @@ import Header from "./Header";
 import Projects from "./ProjectsSection";
 import Articles from "./ArticlesSection";
 import SectionTitle from "../../components/SectionTitle";
-import AdminEditor from "../admin/AdminEditor";
 
 const IndexPage = (props: any) => {
   console.log(props.history.location.pathname);
@@ -22,8 +21,6 @@ const IndexPage = (props: any) => {
         <SectionTitle title={"프로젝트"} more={"자세히 보기"} url={"/"} />
         <Projects />
       </section>
-      <hr />
-      <AdminEditor />
     </div>
   );
 };

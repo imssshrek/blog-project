@@ -29,14 +29,13 @@ const NavCategory = (props: IProps) => {
           >
             {props.largeCategory}
           </span>
-
           <ul
             className="list-small"
             style={display ? { display: "inherit" } : { display: "none" }}
           >
-            {props.smallCategory.map(smallCategory => (
-              <li>{smallCategory}</li>
-            ))}
+            {props.smallCategory.map((smallCategory: any) => {
+              return <li>{smallCategory.subCategory}</li>;
+            })}
           </ul>
         </li>
       </ul>

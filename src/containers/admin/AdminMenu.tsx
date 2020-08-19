@@ -7,7 +7,7 @@ import "./AdminMenu.css";
 const AdminMenu = () => {
   return (
     <div className="admin-menu-container">
-      <Link to="/write">
+      <Link to="/adminwrite">
         <Edit size={24} color="#444444" />
       </Link>
     </div>

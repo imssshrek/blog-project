@@ -27,6 +27,7 @@
     "react-svg": "^11.0.32",
     "sequelize": "^6.3.3",
     "sequelize-cli": "^6.2.0",
+    "styled-components": "^5.1.1",
     "typescript": "~3.7.2"
   },
   "scripts": {
@@ -50,5 +51,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:4000"
+  "proxy": "http://localhost:4000",
+  "devDependencies": {
+    "@types/styled-components": "^5.1.2"
+  }
 }

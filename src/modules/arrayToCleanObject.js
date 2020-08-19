@@ -1,6 +1,5 @@
 // 분명 더 나은 코드가 있을거야...
-
-const createCleanObjectFromArray = arr => {
+const arrayToCleanObject = arr => {
   let newSet = new Set();
 
   for (let i = 0; i < arr.length; i++) {
@@ -32,4 +31,4 @@ const createCleanObjectFromArray = arr => {
   return obj;
 };
 
-export default createCleanObjectFromArray;
+export default arrayToCleanObject;
